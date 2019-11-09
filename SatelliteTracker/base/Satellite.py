@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from satellite_tracker.SatelliteTracker.venv.base import Helpers
+from satellite_tracker.SatelliteTracker.base import Helpers
 
 
 class Satellite:
@@ -26,4 +26,5 @@ class Satellite:
         #yyyy-mm-dd
          launch_date_time = datetime.strptime(self.launch_date, "%Y-%m-%d")
          launch_year = launch_date_time.year
+         print(launch_year)
          Helpers.get_decade_from_year(launch_year)

@@ -1,11 +1,8 @@
-import json
-from random import randrange
-
 import n2yo
 import sys,os
 
-from satellite_tracker.SatelliteTracker.venv.base import Helpers
-from satellite_tracker.SatelliteTracker.venv.base.Satellite import Satellite
+from satellite_tracker.SatelliteTracker.base import Helpers
+from satellite_tracker.SatelliteTracker.base import Satellite
 
 categories = {}
 
@@ -29,7 +26,7 @@ def resolve_categoryname(cat_id):
     return categories[cat_id]
 
 def get_categories_from_file():
-    with open('../resources/catergories.txt') as f:
+    with open('resources/catergories.txt') as f:
         counter = 0
         for line in f:
             categories[str(counter)] = line
@@ -63,11 +60,11 @@ class SatelliteTracker:
     def create_sat_objects(self, sats_above):
         if(len(sats_above)) > 1:
             for sat in sats_above:
-                sat_object = Satellite(id = sat["satid"], name= sat["satname"],launch_date=sat["launchDate"], designator=sat["intDesignator"], satlat=sat["satlat"],satlong=sat["satlng"],satalt=sat["satalt"])
+                sat_object = Satellite.Satellite(id = sat["satid"], name= sat["satname"],launch_date=sat["launchDate"], designator=sat["intDesignator"], satlat=sat["satlat"],satlong=sat["satlng"],satalt=sat["satalt"])
                 sat_object.get_satellite_decade()
 
 
-
+g
 
 if __name__ == "__main__":
     sat_tracker = SatelliteTracker()
