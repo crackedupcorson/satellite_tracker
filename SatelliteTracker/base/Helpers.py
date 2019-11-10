@@ -5,6 +5,8 @@ def get_random_cat_id():
 
 #We're defining low earth orbit as less than 2000km
 LOW_EARTH_ORBIT_LIMIT = 2000
+ATMOSPHERIC_UPPER_LIMIT = 500
+ATMOSPHERIC_LOWER_LIMIT = 180
 
 def get_decade_from_year(launch_year):
     decade_decay = ""

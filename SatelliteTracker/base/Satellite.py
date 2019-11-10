@@ -35,9 +35,13 @@ class Satellite:
         # todo - this takes the decade, altitude and longlat and attempts to estimate the orbital decay
         # the most contributing factor is how they interact with the atmosphere. Right now this function will be limited to LEO satellites
         if self.satalt >= Helpers.LOW_EARTH_ORBIT_LIMIT:
+            print("Satellite is above LEO")
             orbital_decay["status"] = "unavailable"
             orbital_decay["decay_date"] = "Unsure"
+
         else:
             orbital_decay["status"] = "calculating"
             orbital_decay["decay_date"] = "TBC"
+            if Helpers.ATMOSPHERIC_LOWER_LIMIT >= self.satalt <= Helpers.ATMOSPHERIC_UPPER_LIMIT:
+                print("Atmospheric density can be applied")
         return orbital_decay
