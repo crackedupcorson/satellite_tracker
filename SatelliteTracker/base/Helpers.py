@@ -37,6 +37,11 @@ def get_decade_from_year(launch_year):
 def generate_decay_percentage():
     return randrange(100)
 
+def calculate_atmospheric_density(sat_altitude):
+    print("get atmospheric density at a given altitude ")
+
+def calculate_atmospheric_temperature(sat_altitude):
+    print("get atmospheric temperature at a given altitude")
 
 class LaunchDecadeWithDecayPercentage():
     FIFTIES = "1950s"
@@ -48,3 +53,6 @@ class LaunchDecadeWithDecayPercentage():
     TENS = "2010s"
     TWENTIES = "2020s"
 
+
+def get_initial_orbit_params():
+    print ("getting initial orbit params")
