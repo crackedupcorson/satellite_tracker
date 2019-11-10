@@ -61,10 +61,10 @@ class SatelliteTracker:
         if(len(sats_above)) > 1:
             for sat in sats_above:
                 sat_object = Satellite.Satellite(id = sat["satid"], name= sat["satname"],launch_date=sat["launchDate"], designator=sat["intDesignator"], satlat=sat["satlat"],satlong=sat["satlng"],satalt=sat["satalt"])
-                sat_object.get_satellite_decade()
+                sat_object.set_satellite_decade()
+                orbital_decay_details = sat_object.set_satellite_decay()
+                print(orbital_decay_details)
 
-
-g
 
 if __name__ == "__main__":
     sat_tracker = SatelliteTracker()
