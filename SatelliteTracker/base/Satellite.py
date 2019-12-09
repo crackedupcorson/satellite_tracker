@@ -40,6 +40,7 @@ class Satellite:
             orbital_decay["decay_date"] = "Unsure"
 
         else:
+            print("Satellite is in LEO, orbit of {}".format(self.satalt))
             orbital_decay["status"] = "calculating"
             orbital_decay["decay_date"] = "TBC"
             if Helpers.ATMOSPHERIC_LOWER_LIMIT >= self.satalt <= Helpers.ATMOSPHERIC_UPPER_LIMIT:
@@ -61,4 +62,4 @@ class Satellite:
         Helpers.calculate_atmospheric_temperature((self.satalt))
 
         #Using atmospheric density and temperature we can make an atmospheric model to use in calculating drag/decay
-        print("starting calculation for  orbital decay")
+        print("starting calculation for orbital decay")

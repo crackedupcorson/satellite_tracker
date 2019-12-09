@@ -46,14 +46,12 @@ class SatelliteTracker:
         print("this gets the N2y0 API and stores it as a global")
 
     def get_satellites_over_head(self, degree, cat_id):
-        get_categories_from_file()
-        print("Booting up!")
+        get_categories_from_file
         long_lat = get_long_lat()
         sats_above_json = self.satellite_api_client.get_above(degree,cat_id,long_lat["latitude"], long_lat["longitude"], long_lat["altitude"])
         sats_above_info = sats_above_json[0]
         current_sat_count = sats_above_info['satcount']
-        print("there are {} satellites above your head with a degree specification of {} under category {}".format(current_sat_count,degree,cat_id))
-        print("category {} resolves to {}".format(cat_id, categories[str(cat_id)]))
+        print("there are {} satellites above your head with a degree specification of {} under category {}={}".format(current_sat_count,degree,cat_id,categories[str(cat_id)]))
         sats_above = sats_above_json[1]
         self.create_sat_objects(sats_above)
 
