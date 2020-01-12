@@ -37,11 +37,16 @@ def get_decade_from_year(launch_year):
 def generate_decay_percentage():
     return randrange(100)
 
-def calculate_atmospheric_density(sat_altitude):
+def calculate_atmospheric_density(sat_altitude, temperature):
     print("get atmospheric density at a given altitude ")
 
 def calculate_atmospheric_temperature(sat_altitude):
-    print("get atmospheric temperature at a given altitude")
+    if(sat_altitude < 100):
+        return
+    # temperature drops by 6.5c every km. That's 65c every 10km.
+    # should we take the latitude into account
+
+    pass
 
 class LaunchDecadeWithDecayPercentage():
     FIFTIES = "1950s"
